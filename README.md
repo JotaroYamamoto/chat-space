@@ -9,7 +9,7 @@
 ### Association
 has_many :messages
 has_many :groups, through: :groups_users
-has_many:groups_users
+has_many :groups_users
 add_index :users, : name,uniquie:true
 add_index :users,:email,unique:true
 
@@ -21,6 +21,7 @@ add_index :users,:email,unique:true
 ### Association
 has_many :masseges
 has_many :users, through: :groups_users
+has_many :groups_users
 
 ## massagesテーブル
 |Column|Type|Options|
@@ -31,8 +32,8 @@ has_many :users, through: :groups_users
 |user_id|integer|foreign_key:true|
 
 ### Association
-belongs_to :users
-belongs_to :groups
+belongs_to :user
+belongs_to :group
 
 ## groups_usersテーブル
 
