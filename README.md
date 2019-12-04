@@ -9,6 +9,9 @@
 ### Association
 has_many :messages
 has_many :groups, through: :groups_users
+has_many:groups_users
+add_index :users, : name,uniquie:true
+add_index :users,:email,unique:true
 
 ## groupsテーブル
 |Column|Type|Options|
