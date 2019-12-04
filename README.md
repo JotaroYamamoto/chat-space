@@ -26,10 +26,10 @@ has_many :groups_users
 ## massagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null:false|
-|image|string|null:false|
-|group_id|integer|foreign_key:true|
-|user_id|integer|foreign_key:true|
+|body|text||
+|image|string||
+|group_id|integer|null:false,foreign_key:true,index:true|
+|user_id|integer|null:false,foreign_key:true,index:true|
 
 ### Association
 belongs_to :user
