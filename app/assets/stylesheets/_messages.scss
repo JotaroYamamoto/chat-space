@@ -149,12 +149,15 @@
         padding: 0 10px;
         position: relative;
         width: 100%;
-        
+        input{
+          display: none;
+        }
         &--core{
           color: #999999;
 
         }
         &--btn{
+          
           
         }
       }
@@ -170,6 +173,4 @@
 
   }
 }
-input{
-  display: none;
-}
+
