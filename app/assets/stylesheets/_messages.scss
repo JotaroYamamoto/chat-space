@@ -21,12 +21,14 @@
       background-color: #333333;
       display: flex;
       justify-content: space-between;
+      list-style: none;
       &__name{
         background-color: #253141;
         width: calc(100vw - 60px);
         font-weight: bold;
         color: white;
         font-size: 16px;
+        
       }
       &__icons{
         background-color: #253141;
@@ -44,6 +46,7 @@
   &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+    text-decoration: none;
     &__one{
       height: 100px;
       &__name{
@@ -55,6 +58,7 @@
         color: #ffffff ;
       }
       &__message{
+        
         margin-top:5px ;
         margin-bottom:40px ;
         margin-left: 20px;
@@ -62,6 +66,7 @@
         font-weight: bold;
         font-size: 11px;
         color: white;
+        
 
       }
     }
