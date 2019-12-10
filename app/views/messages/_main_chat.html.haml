@@ -1,35 +1,33 @@
 .chat-main
   .chat-main__group-info
     .chat-main__group-info__left 
-      s
-      .chat-main__group-info__left__under aa
-    
-    =link_to "#",class: "chat-main__group-info__right" do
+      = @group.name
+      .chat-main__group-info__left__under
+        = "Menber:#{current_user.name}"
+    =link_to edit_group_path(@group.id) ,class: "chat-main__group-info__right" do
       Edit
   .chat-main__message-list
-    .chat-main__message-list__one
-      .chat-main__message-list__one--name
-        masa
-      .chat-main__message-list__one--time
-        2019/11/20
-      .chat-main__message-list__one--content
-        おはよう
-    .chat-main__message-list__one
-      .chat-main__message-list__one--name
-        masa
-      .chat-main__message-list__one--time
-        2019/11/20
-      .chat-main__message-list__one--content
-        おおおおおおおおおおおおおおおおおおおおおおおおおおおお
-  .chat-main__message-form
-    .chat-main__message-form__new
-      .chat-main__message-form__new--text
-        .chat-main__message-form__new--text--core 
-          ddd
-        .chat-main__message-form__new--text--btn
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file"}
-      .chat-main__message-form__new--submit Send
+    = render @messages
+  .chat-main__message--form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat-main__message--form__message', placeholder: 'type a message'
+      .position
+        = f.label :image, class: 'image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit'
+      
+
+
+  -# .chat-main__message-form
+  -#   .chat-main__message-form__new
+  -#     .chat-main__message-form__new--text
+  -#       = form_for [@group, @message] do |f|
+  -#         = f.text_field :content, class: 'chat-main__message-form__new--text--core', placeholder: 'type a message'
+  -#       .chat-main__message-form__new--text--btn
+  -#         %label{class: "input-box__image"}
+  -#           = icon('fas', 'image')
+  -#           %input{class: "file",type: "file"}
+  -#     .chat-main__message-form__new--submit Send
    
-    
+
