@@ -31,6 +31,7 @@
   &__message-list{
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    overflow: scroll;
     &__one{
       padding-top:35px ;
       margin-bottom:11px ;
